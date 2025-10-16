@@ -80,7 +80,7 @@ def write_to_txt(median, crop_count, avg_rain):
     f = open(f, "w")
 
     f.write(f"Median Yield: {median:.2f} tons per hectare\n")
-    f.write(f"Number of crops above median: {crop_count}\n")
+    f.write(f"Number of crops above median: {crop_count} crops\n")
     f.write(f"Average Rainfall for crops above median value: {avg_rain:.2f} mm\n")
     
     f.close()

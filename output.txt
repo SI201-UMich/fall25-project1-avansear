@@ -1,0 +1,3 @@
+Median Yield: 4.65 tons per hectare
+Number of crops above median: 500000 crops
+Average Rainfall for crops above median value: 722.66 mm
