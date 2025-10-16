@@ -26,14 +26,13 @@ def reading(file):
     file.close()
     return d_list
 
+#getting median yield value for more calculations
 def get_median_yield(d_list):
     yields = []
-    string = "Yield_tons_per_hectare"
 
     for row in d_list:
-        if string in row:
-            val = float(row[string])
-            yields.append(val)
+        val = float(row["Yield_tons_per_hectare"])
+        yields.append(val)
 
     yields.sort()
     n = len(yields)
@@ -49,6 +48,7 @@ def get_median_yield(d_list):
     return median
     pass
 
+#creating a new list for yields of crops that are above the median value.
 def above_median(d_list, median):
     newd_list = []
 
@@ -60,7 +60,18 @@ def above_median(d_list, median):
     return newd_list
     pass
 
+#calculating average rainfall for crops that are above the median yield value.
 def calc_avg_rain(newd_list):
+    total_rain = 0
+    count = 0
+
+    for row in newd_list:
+        rain = float(row["Rainfall_mm"])
+        total_rain += rain
+        count += 1
+    
+    avg_rain = total_rain / count
+    return avg_rain
     pass
 
 def write_to_txt(median, crop_count, avg_rain):
