@@ -86,34 +86,44 @@ class TestCalc(unittest.TestCase):
     #calc_avg_rain general case 1
     def test9(self):
         data = [
-
+            {"Rainfall_mm": "100"},
+            {"Rainfall_mm": "200"},
+            {"Rainfall_mm": "150"}
         ]
 
-        self.assertEqual()
+        avg = (100 + 200 + 150) / 3
+        self.assertAlmostEqual(calc_avg_rain(data), avg)
 
     #calc_avg_rain general case 2
     def test10(self):
         data = [
-
+            {"Rainfall_mm": "50"},
+            {"Rainfall_mm": "75"},
+            {"Rainfall_mm": "125"},
+            {"Rainfall_mm": "100"}
         ]
 
-        self.assertEqual()
+        avg = (50 + 75 + 125 + 100) / 4
+        self.assertAlmostEqual(calc_avg_rain(data), avg)
 
     #calc_avg_rain edge case 1
     def test11(self):
         data = [
-
+            {"Rainfall_mm": "300"}
         ]
 
-        self.assertEqual()
+        self.assertAlmostEqual(calc_avg_rain(data), 300.0)
 
     #calc_avg_rain edge case 2
     def test12(self):
         data = [
-
+            {"Rainfall_mm": "0"},
+            {"Rainfall_mm": "0.5"},
+            {"Rainfall_mm": "0.2"}
         ]
 
-        self.assertEqual()
+        avg = (0 + 0.5 + 0.2) / 3
+        self.assertAlmostEqual(calc_avg_rain(data), avg)
 
 if __name__ == "__main__":
     unittest.main()
