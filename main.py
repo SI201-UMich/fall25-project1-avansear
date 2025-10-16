@@ -27,13 +27,32 @@ def reading(file):
     return d_list
 
 def get_median_yield(d_list):
+    yields = []
+    string = "Yield_tons_per_hectare"
+
+    for row in d_list:
+        if string in row:
+            val = float(row[string])
+            yields.append(val)
+
+    yields.sort()
+    n = len(yields)
+
+    if n % 2 == 1:
+        mid = int(n / 2)
+        median = yields[mid]
+    else:
+        mid1 = yields[int(n / 2)]
+        mid2 = yields[int((n - 1) / 2)]
+        median = (mid1 + mid2) / 2
+
+    return median
     pass
 
 def above_median(d_list, median):
-
     pass
 
-def calc_avg_rain(new_dlist):
+def calc_avg_rain(newd_list):
     pass
 
 def write_to_txt(median, crop_count, avg_rain):
