@@ -31,7 +31,7 @@ def get_median_yield(d_list):
     yields = []
 
     for row in d_list:
-        val = float(row["Yield_tons_per_hectare"])
+        val = float(row["Yields_tons_per_hectare"])
         yields.append(val)
 
     yields.sort()
@@ -74,7 +74,16 @@ def calc_avg_rain(newd_list):
     return avg_rain
     pass
 
+#method to write everything to txt file.
 def write_to_txt(median, crop_count, avg_rain):
+    f = "output.txt"
+    f = open(f, "w")
+
+    f.write(f"Median Yield: {median}\n")
+    f.write(f"Number of crops above median: {crop_count}\n")
+    f.write(f"Average Rainfall for crops above median value: {avg_rain}\n")
+    
+    f.close()
     pass
 
 def main():
