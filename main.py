@@ -50,6 +50,14 @@ def get_median_yield(d_list):
     pass
 
 def above_median(d_list, median):
+    newd_list = []
+
+    for row in d_list:
+        val = float(row["Yields_tons_per_hectare"])
+        if val > median:
+            newd_list.append(row)
+    
+    return newd_list
     pass
 
 def calc_avg_rain(newd_list):
