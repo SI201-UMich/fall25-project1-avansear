@@ -23,7 +23,7 @@ def reading(file):
             d[headers[i]] = row[i]
         d_list.append(d)
     
-    file.close()
+    f.close()
     return d_list
 
 #getting median yield value for more calculations
@@ -31,7 +31,7 @@ def get_median_yield(d_list):
     yields = []
 
     for row in d_list:
-        val = float(row["Yields_tons_per_hectare"])
+        val = float(row["Yield_tons_per_hectare"])
         yields.append(val)
 
     yields.sort()
@@ -53,7 +53,7 @@ def above_median(d_list, median):
     newd_list = []
 
     for row in d_list:
-        val = float(row["Yields_tons_per_hectare"])
+        val = float(row["Yield_tons_per_hectare"])
         if val > median:
             newd_list.append(row)
     
@@ -79,9 +79,9 @@ def write_to_txt(median, crop_count, avg_rain):
     f = "output.txt"
     f = open(f, "w")
 
-    f.write(f"Median Yield: {median}\n")
+    f.write(f"Median Yield: {median:.2f} tons per hectare\n")
     f.write(f"Number of crops above median: {crop_count}\n")
-    f.write(f"Average Rainfall for crops above median value: {avg_rain}\n")
+    f.write(f"Average Rainfall for crops above median value: {avg_rain:.2f} mm\n")
     
     f.close()
     pass
@@ -96,3 +96,6 @@ def main():
     crop_count = len(newd_list)
 
     write_to_txt(median_yield, crop_count, avg_rain)
+
+if __name__ == "__main__":
+    main()
