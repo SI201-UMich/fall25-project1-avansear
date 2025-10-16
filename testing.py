@@ -42,5 +42,69 @@ class TestCalc(unittest.TestCase):
 
         self.assertEqual(get_median_yield(data), 15)
 
+    #above_median general case 1
+    def test5(self):
+        data = [
+
+        ]
+
+        self.assertEqual()
+
+    #above_median general case 2
+    def test5(self):
+        data = [
+
+        ]
+
+        self.assertEqual()
+
+    #above_median edge case 1
+    def test5(self):
+        data = [
+
+        ]
+
+        self.assertEqual()
+
+    #above_median edge case 2
+    def test5(self):
+        data = [
+
+        ]
+
+        self.assertEqual()
+
+    #calc_avg_rain general case 1
+    def test5(self):
+        data = [
+
+        ]
+
+        self.assertEqual()
+
+    #calc_avg_rain general case 2
+    def test5(self):
+        data = [
+
+        ]
+
+        self.assertEqual()
+
+    #calc_avg_rain edge case 1
+    def test5(self):
+        data = [
+
+        ]
+
+        self.assertEqual()
+
+    #calc_avg_rain edge case 2
+    def test5(self):
+        data = [
+
+        ]
+
+        self.assertEqual()
+
 if __name__ == "__main__":
     unittest.main()
