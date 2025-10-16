@@ -125,5 +125,8 @@ class TestCalc(unittest.TestCase):
         avg = (0 + 0.5 + 0.2) / 3
         self.assertAlmostEqual(calc_avg_rain(data), avg)
 
+def main():
+    pass
+
 if __name__ == "__main__":
     unittest.main()
