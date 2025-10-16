@@ -45,37 +45,46 @@ class TestCalc(unittest.TestCase):
     #above_median general case 1
     def test5(self):
         data = [
-
+            {"Yield_tons_per_hectare": "5.0"},
+            {"Yield_tons_per_hectare": "10.0"},
+            {"Yield_tons_per_hectare": "7.0"}
         ]
 
-        self.assertEqual()
+        result = above_median(data, 6.0)
+        self.assertEqual(len(result), 2)
 
     #above_median general case 2
-    def test5(self):
+    def test6(self):
         data = [
-
+            {"Yield_tons_per_hectare": "5.0"},
+            {"Yield_tons_per_hectare": "10.0"},
+            {"Yield_tons_per_hectare": "7.0"}
         ]
 
-        self.assertEqual()
+        result = above_median(data, 7.0)
+        self.assertEqual(len(result), 1)
 
     #above_median edge case 1
-    def test5(self):
+    def test7(self):
         data = [
-
+            {"Yield_tons_per_hectare": "5.0"},
+            {"Yield_tons_per_hectare": "5.0"}
         ]
 
-        self.assertEqual()
+        result = above_median(data, 5.0)
+        self.assertEqual(len(result), 0)
 
     #above_median edge case 2
-    def test5(self):
+    def test8(self):
         data = [
-
+            {"Yield_tons_per_hectare": "12.0"}
         ]
 
-        self.assertEqual()
+        result = above_median(data, 10.0)
+        self.assertEqual(len(result), 1)
 
     #calc_avg_rain general case 1
-    def test5(self):
+    def test9(self):
         data = [
 
         ]
@@ -83,7 +92,7 @@ class TestCalc(unittest.TestCase):
         self.assertEqual()
 
     #calc_avg_rain general case 2
-    def test5(self):
+    def test10(self):
         data = [
 
         ]
@@ -91,7 +100,7 @@ class TestCalc(unittest.TestCase):
         self.assertEqual()
 
     #calc_avg_rain edge case 1
-    def test5(self):
+    def test11(self):
         data = [
 
         ]
@@ -99,7 +108,7 @@ class TestCalc(unittest.TestCase):
         self.assertEqual()
 
     #calc_avg_rain edge case 2
-    def test5(self):
+    def test12(self):
         data = [
 
         ]
